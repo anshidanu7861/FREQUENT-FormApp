@@ -1,0 +1,242 @@
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<div>
+  
+<nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+  <div class="container flex flex-wrap items-center justify-between mx-auto bg-red-100">
+    <a href="#" class="flex items-center">
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FREQUENT RESEARCH</span>
+    </a>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default ">
+      <ul class="flex flex-col p-4 mt-4 border  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="/viewData" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">View Data</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+</div>
+
+<div class="container flex items-center justify-center">
+<div class="w-full max-w-xs">
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="userData" >
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="firstname">
+        First Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="firstname" onkeyup="validateName()" type="text" placeholder="Firstname" name="firstname">
+      <span id="errorname" ></span>
+    </div>
+
+       <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="lastname">
+        Last Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastname" onkeyup="lastnamevalidate()" type="text" placeholder="Lastname" name="lastname">
+      <span id="errorlastname"></span>
+    </div>
+      <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+        Email
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" onkeyup="validateEmail()" type="email" placeholder="Email" name="email">
+      <span id="erroremail"></span>
+    </div>
+
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="country">
+  <option value="0" selected>Choose a country</option>
+  <option value="india">india</option>
+  <option value="Canada">Canada</option>
+  <option value="FR">France</option>
+  <option value="DE">Germany</option>
+</select>
+<br>
+
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="state">
+  <option value="0" selected>Choose a states</option>
+  <option value="US">kerala</option>
+  <option value="CA">panjab</option>
+  <option value="FR">karnadaka</option>
+  <option value="DE">delhi</option>
+</select>
+<br>
+
+
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+  <option value="0" selected>Choose a City</option>
+  <option value="US">kerala</option>
+  <option value="CA">panjab</option>
+  <option value="FR">karnadaka</option>
+  <option value="DE">delhi</option>
+</select>
+<br>
+
+<div class="flex">
+    <div class="flex items-center mr-4">
+        <input id="inline-radio" type="radio" value="male" name="gender" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+    </div>
+    <div class="flex items-center mr-4">
+        <input id="inline-2-radio" type="radio" value="femail" name="gender" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-2-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Femail</label>
+    </div>
+    <div class="flex items-center mr-4">
+        <input checked id="inline-checked-radio" type="radio" value="other" name="gender" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="inline-checked-radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Other</label>
+    </div>
+  
+</div>
+<br>
+
+<div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+        Date OF Birth
+      </label>
+      <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="date" onchange="checkAge()" type="date"  placeholder="date of birth" name="date_of_birth">
+      <span id="dateError"></span>
+    </div>
+
+       <div class="mb-4">
+       <label class="block text-gray-700 text-sm font-bold mb-2" for="age">
+       Age
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="" id="bge"  type="number" placeholder="Age" name="age" >
+    
+    </div>
+    
+    <div class="flex items-center justify-between">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+</div>
+
+<script>
+$('#userData').submit((e)=>{
+  e.preventDefault(),
+  $.ajax({
+    url:'/form',
+    method:'post',
+    data:$('#userData').serialize(),
+    success:(response)=> {
+      if(response) {
+        alert('Success Fully Registered!!');
+        location.reload();
+      }
+    }
+  })
+});
+
+
+
+const nameError = document.getElementById('errorname');
+const lastnameError = document.getElementById('errorlastname');
+const emailError = document.getElementById('erroremail');
+const dateError = document.getElementById('dateError');
+const getAge = document.getElementById('bge')
+
+
+// Validation for Firstname
+function validateName() {
+  const name = document.getElementById('firstname').value;
+  if(name.length == 0) {
+    nameError.innerHTML = "Name is require";
+    nameError.style.color = 'red'
+    return false;
+  }
+
+  if(name.match(/['!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
+    nameError.innerHTML = 'Special charecters not allowed';
+    nameError.style.color = 'red';
+    return false
+  }
+
+ if(name.match(/[1234567890]/)) {
+	nameError.innerHTML = 'Numbers not Allowed';
+	nameError.style.color = 'red';
+	return false;
+	}
+
+  nameError.innerHTML = 'Valid';
+  nameError.style.color = 'green';
+  return true;
+}
+
+// Validation for Lastname
+function lastnamevalidate() {
+  const lastname = document.getElementById('lastname').value;
+  if(lastname.length == 0) {
+    lastnameError.innerHTML = 'Last Name is Required';
+    lastnameError.style.color = 'red'
+    return false;
+  }
+
+  if(lastname.match(/['!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
+    lastnameError.innerHTML = 'Special charecters not allowed ';
+    lastnameError.style.color = 'red';
+    return false;
+  }
+
+  if(lastname.match(/[1234567890]/)) {
+    lastnameError.innerHTML = "Numbers not Allowed";
+    lastnameError.style.color = 'red';
+    return false;
+  }
+
+  lastnameError.innerHTML = "Valid";
+  lastnameError.style.color = 'green';
+  return true;
+}
+
+// Validate for Email
+function validateEmail() {
+  const email = document.getElementById('email').value;
+
+  if(email.length == 0) {
+    emailError.innerHTML = 'Email is Require'
+    emailError.style.color = 'red';
+    return false;
+  }
+  if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    emailError.innerHTML = 'Invalid Emial';
+    emailError.style.color = 'red';
+    return false;
+  }
+  emailError.innerHTML = 'Valid';
+  emailError.style.color = 'green';
+  return true;
+  
+}
+
+
+// Check more than 14
+function checkAge() {
+const currentDate = new Date().getFullYear() 
+    const date = document.getElementById('date').value
+    let convertDate = parseInt(date)
+let age = parseInt( currentDate-convertDate )
+
+
+getAge.value = age
+    const checkDate = '2009-01-01'
+     let  convertFixdate = parseInt(checkDate)
+    if(convertDate > convertFixdate ) {
+      dateError.innerHTML = 'Person should be morethan 14 years old';
+      dateError.style.color = 'red';
+      return false
+    }else{
+      dateError.innerHTML = 'Valid';
+      dateError.style.color = 'green';
+      return true
+    }
+  } 
+</script>

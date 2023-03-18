@@ -1,0 +1,96 @@
+
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+<div>
+  
+<nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+  <div class="container flex flex-wrap items-center justify-between mx-auto bg-red-100">
+    <a href="#" class="flex items-center">
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FREQUENT RESEARCH</span>
+    </a>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default ">
+      <ul class="flex flex-col p-4 mt-4 border  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Back Form</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+</div>
+<br>
+
+
+<div class=" relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    First Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Last Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Country
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    State
+                </th>
+                  <th scope="col" class="px-6 py-3">
+                    City
+                </th>
+                  <th scope="col" class="px-6 py-3">
+                    Gender
+                </th>
+                 <th scope="col" class="px-6 py-3">
+                    Date of Birth
+                </th>
+                 <th scope="col" class="px-6 py-3">
+                    Age
+                </th>
+            </tr>
+        </thead>
+
+        {{#each data}}
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.firstname}}
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.lastname}}
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.email}}
+                </th>
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.country}}
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.state}}
+                </th>
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.city}}
+                </th>
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.gender}}
+                </th>
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.date_of_birth}}
+                </th>
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{this.age}}
+                </th>
+            </tr>
+
+           
+        </tbody>
+        {{/each}}
+    </table>
+</div>
