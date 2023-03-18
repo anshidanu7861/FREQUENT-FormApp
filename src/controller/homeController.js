@@ -11,7 +11,7 @@ module.exports.viewForm =async (req, res) => {
     res.render('viewForm', {data})
 }
 
-module.exports.homePost = async (req, res) => {
+module.exports.homePostMethod = async (req, res) => {
     try{
         console.log(req.body);
         const { firstname, lastname, email, country, state, city, gender, date_of_birth, age} = req.body;

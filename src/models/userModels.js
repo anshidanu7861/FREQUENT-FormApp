@@ -1,6 +1,4 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-
+const mongoose = require('mongoose');
 
 
 const userSchema = new mongoose.Schema({
@@ -41,6 +39,9 @@ const userSchema = new mongoose.Schema({
         required: [true, "Age is required"]
     }
 })
+
+
+
 
 
 

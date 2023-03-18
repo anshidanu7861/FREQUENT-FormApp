@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { home, homePost, viewForm } = require('../controller/homeController')
+const { home, viewForm, homePostMethod } = require('../controller/homeController')
 
 // Home page
 router.get('/', home);
-router.post('/form', homePost);
+// Home Post Method
+router.post('/form', homePostMethod);
 
 
-// View form datas
+// View form Datas
 router.get('/viewData', viewForm)
 
 
