@@ -48,34 +48,38 @@
     </div>
 
     <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="country">
-  <option value="0" selected>Choose a country</option>
-  <option value="india">india</option>
-  <option value="Canada">Canada</option>
-  <option value="FR">France</option>
-  <option value="DE">Germany</option>
+<select id="countries"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="country">
+  <option   value="0" selected>Choose a country</option>
+ {{#each countryData}}
+  <option value={{this.name}}  >{{this.name}}</option>
+
+  {{/each}}
 </select>
 <br>
 
-    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="state">
+    <label for="states" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+<select id="states"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="state">
   <option value="0" selected>Choose a states</option>
-  <option value="kerala">kerala</option>
-  <option value="panjab">panjab</option>
-  <option value="karnadaka">karnadaka</option>
-  <option value="delhi">delhi</option>
+ {{#each stateData}}
+  <option value={{this.name}} >{{this.name}}</option>
+  {{/each}}
+
 </select>
 <br>
 
+    <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
 
-    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+<select id="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+
   <option value="0" selected>Choose a City</option>
-  <option value="kochi">Kochi</option>
-  <option value="malappuram">malappuram</option>
-  <option value="kollam">Kollam</option>
-  <option value="kottayam">Kottayam</option>
+  {{#each stateData}}
+  <option value={{this.name}} >{{this.name}}</option>
+  {{/each}}
+
+
 </select>
+
+
 <br>
 
 <div class="flex">
@@ -103,7 +107,7 @@
       <span id="dateError"></span>
     </div>
 
-       <div class="mb-4">
+     <div class="mb-4">
        <label class="block text-gray-700 text-sm font-bold mb-2" for="age">
        Age
       </label>
@@ -225,8 +229,7 @@ const currentDate = new Date().getFullYear()
     let convertDate = parseInt(date)
 let age = parseInt( currentDate-convertDate )
 
-
-getAge.value = age
+  getAge.value = parseInt(age) 
     const checkDate = '2009-01-01'
      let  convertFixdate = parseInt(checkDate)
     if(convertDate > convertFixdate ) {
@@ -239,4 +242,5 @@ getAge.value = age
       return true
     }
   } 
+
 </script>
